@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.use("/tasks", tasksRouter);
 
 // Rota de erro
-app.use("*", (req, res) => {
+app.use((req, res, next) => {
   res.status(404).send("Not Found");
 });
 
