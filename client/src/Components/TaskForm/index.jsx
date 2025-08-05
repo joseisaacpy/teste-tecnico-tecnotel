@@ -42,8 +42,7 @@ const TaksForm = () => {
 
   return (
     <section>
-      <form className="flex flex-col gap-2" 
-      onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
         {/* Título */}
         <div className="flex flex-col gap-2">
           <label htmlFor="titulo">Título</label>
@@ -73,7 +72,7 @@ const TaksForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-slate-900 text-white p-2 rounded-[5px]"
+          className="cursor-pointer bg-slate-900 text-white p-2 rounded-[5px]"
         >
           Adicionar
         </button>
