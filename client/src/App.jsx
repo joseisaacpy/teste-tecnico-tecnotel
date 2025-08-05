@@ -1,5 +1,7 @@
+// Imports
 import TaskPage from "./Components/TaskPage";
 import { useEffect } from "react";
+
 function App() {
   // Usa o useEffect para mudar nome do title
   useEffect(() => {
@@ -15,6 +17,7 @@ function App() {
         </header>
         {/* Main */}
         <main className="flex-1 p-4">
+          {/* Componente pai com form e a visualização das tarefas */}
           <TaskPage />
         </main>
         {/* Footer */}

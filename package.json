@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "start-client": "cd client && npm install && npm run dev",
+    "start-server": "cd server && npm install && npm run dev"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

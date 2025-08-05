@@ -1,3 +1,4 @@
+// Imports
 import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { FaTrash, FaEdit, FaCheck } from "react-icons/fa";
@@ -12,6 +13,7 @@ const TaskList = ({ atualizarTrigger }) => {
   const [tituloEdicao, setTituloEdicao] = useState("");
   const [descricaoEdicao, setDescricaoEdicao] = useState("");
 
+  // Função para abrir modal de edição
   const abrirModalEdicao = (tarefa) => {
     setTarefaParaEditar(tarefa);
     setTituloEdicao(tarefa.titulo);
@@ -19,6 +21,7 @@ const TaskList = ({ atualizarTrigger }) => {
     setModalAberto(true);
   };
 
+  // Função para fechar modal
   const fecharModal = () => {
     setModalAberto(false);
     setTarefaParaEditar(null);
@@ -37,7 +40,6 @@ const TaskList = ({ atualizarTrigger }) => {
       console.error(error);
     }
   };
-
   // Função para deletar tarefa
   const deletarTarefa = async (id) => {
     try {
@@ -51,7 +53,6 @@ const TaskList = ({ atualizarTrigger }) => {
       toast.error("Erro ao deletar tarefa.");
     }
   };
-
   // Função para dar check na tarefa
   const checkTarefa = async (id) => {
     try {
@@ -105,6 +106,7 @@ const TaskList = ({ atualizarTrigger }) => {
 
   return (
     <>
+      {/* Se o modal tiver aberto (true), exibe */}
       {modalAberto && (
         <Modal onClose={fecharModal}>
           <form

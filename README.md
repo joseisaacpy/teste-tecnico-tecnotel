@@ -27,50 +27,119 @@ API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas 
 
 ## 🗂 Estrutura do projeto
 
+Este projeto é dividido em duas partes:
+
+- `server/` → API REST com Node.js, Express, Prisma e SQLite
+- `client/` → Interface web com Vite, React e TailwindCSS
+
 ```bash
 📦 teste-tecnico-tecnotel
 ├─ .gitattributes
 ├─ .gitignore
 ├─ README.md
-├─ lib
-│  └─ prismaClient.js
+├─ client
+│  ├─ .gitignore
+│  ├─ README.md
+│  ├─ eslint.config.js
+│  ├─ index.html
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ src
+│  │  ├─ App.jsx
+│  │  ├─ Components
+│  │  │  ├─ Loader
+│  │  │  │  └─ index.jsx
+│  │  │  ├─ Modal
+│  │  │  │  └─ index.jsx
+│  │  │  ├─ TaskForm
+│  │  │  │  └─ index.jsx
+│  │  │  ├─ TaskList
+│  │  │  │  └─ index.jsx
+│  │  │  └─ TaskPage
+│  │  │     └─ index.jsx
+│  │  ├─ assets
+│  │  │  └─ Poppins-Regular.ttf
+│  │  ├─ index.css
+│  │  └─ main.jsx
+│  └─ vite.config.js
 ├─ package-lock.json
 ├─ package.json
-├─ prisma
-│  └─ schema.prisma
-├─ routes
-│  └─ tasksRouter.js
-└─ server.js
+└─ server
+   ├─ generated
+   │  └─ prisma
+   │     ├─ client.d.ts
+   │     ├─ client.js
+   │     ├─ default.d.ts
+   │     ├─ default.js
+   │     ├─ edge.d.ts
+   │     ├─ edge.js
+   │     ├─ index-browser.js
+   │     ├─ index.d.ts
+   │     ├─ index.js
+   │     ├─ package.json
+   │     ├─ query_engine-windows.dll.node
+   │     ├─ runtime
+   │     │  ├─ edge-esm.js
+   │     │  ├─ edge.js
+   │     │  ├─ index-browser.d.ts
+   │     │  ├─ index-browser.js
+   │     │  ├─ library.d.ts
+   │     │  ├─ library.js
+   │     │  ├─ react-native.js
+   │     │  ├─ wasm-compiler-edge.js
+   │     │  └─ wasm-engine-edge.js
+   │     ├─ schema.prisma
+   │     ├─ wasm.d.ts
+   │     └─ wasm.js
+   ├─ lib
+   │  └─ prismaClient.js
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ prisma
+   │  ├─ dev.db
+   │  ├─ migrations
+   │  │  ├─ 20250805094928_init
+   │  │  │  └─ migration.sql
+   │  │  └─ migration_lock.toml
+   │  └─ schema.prisma
+   ├─ routes
+   │  └─ tasksRouter.js
+   └─ server.js
 ```
 
 ## 📦 Instalação
 
 Clone o repositório:
 
-```
+```bash
 git clone https://github.com/joseisaacpy/teste-tecnico-tecnotel
 
 cd teste-tecnico-tecnotel
-```
-
-## Instale as dependências:
 
 ```
+
+Instale as dependências da raiz (que também prepara os scripts do front e backend):
+
+```bash
+
 npm install
 ```
 
-## Configure o Prisma:
+Configure o Prisma (gerar cliente e criar o banco SQLite):
 
-```
+```bash
 npx prisma generate
 npx prisma db push
 ```
 
 🔹 Um arquivo de banco de dados SQLite (`dev.db`) será criado automaticamente na pasta `prisma/`.
 
-## Inicie o servidor:
+## Para rodar o projeto
 
-```
+Você pode rodar backend e frontend juntos no modo de desenvolvimento com:
+
+```bash
+
 npm run dev
 ```
 
