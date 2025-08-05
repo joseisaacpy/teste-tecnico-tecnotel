@@ -61,8 +61,29 @@ tasksRouter.get("/:id", async (req, res) => {
 });
 
 // Atualiza uma tarefa
+tasksRouter.put("/:id", async (req, res) => {
+  try {
+    const task = await prisma.task.update({
+      where: {
+        id: req.params.id,
+      },
+      data: req.body,
+    });
 
-// Deleta uma tarefa pelo id
+    if (!task) {
+      return res.status(404).json({ msg: "Tarefa não encontrada." });
+    }
+
+    res.json({
+      message: "Tarefa atualizada com sucesso.",
+      task,
+    });
+  } catch (error) {
+    res.status(500).send({ msg: "Erro ao atualizar tarefa." });
+  }
+});
+
+// Deleta uma tarefa
 tasksRouter.delete("/:id", async (req, res) => {
   try {
     const task = await prisma.task.delete({
