@@ -45,7 +45,7 @@ tasksRouter.get("/:id", async (req, res) => {
   try {
     const task = await prisma.task.findUnique({
       where: {
-        id: req.params.id,
+        id: Number(req.params.id),
       },
     });
     if (!task) {
@@ -65,7 +65,7 @@ tasksRouter.put("/:id", async (req, res) => {
   try {
     const task = await prisma.task.update({
       where: {
-        id: req.params.id,
+        id: Number(req.params.id),
       },
       data: req.body,
     });
@@ -88,7 +88,7 @@ tasksRouter.delete("/:id", async (req, res) => {
   try {
     const task = await prisma.task.delete({
       where: {
-        id: req.params.id,
+        id: Number(req.params.id),
       },
     });
 
