@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import { FaTrash, FaEdit, FaCheck } from "react-icons/fa";
 
 const TaskList = () => {
+  // Estado para armazenar as tarefas
   const [tarefas, setTarefas] = useState([]);
   // Função para buscar tarefas no banco
   const buscarTarefas = async () => {
@@ -11,6 +13,19 @@ const TaskList = () => {
       setTarefas(data);
     } catch (error) {
       console.error(error);
+    }
+  };
+  // Função para deletar tarefa
+  const deletarTarefa = async (id) => {
+    try {
+      await fetch(`http://localhost:3000/tasks/${id}`, {
+        method: "DELETE",
+      });
+      buscarTarefas();
+      toast.success("Tarefa deletada com sucesso!");
+    } catch (error) {
+      console.error(error);
+      toast.error("Erro ao deletar tarefa.");
     }
   };
   // Usa o useEffect para buscar as tarefas ao montar o componente
@@ -44,7 +59,10 @@ const TaskList = () => {
                   <button className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all">
                     <FaEdit />
                   </button>
-                  <button className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all">
+                  <button
+                    className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all"
+                    onClick={() => deletarTarefa(tarefa.id)}
+                  >
                     <FaTrash />
                   </button>
                   <button className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all">
