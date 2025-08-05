@@ -5,14 +5,13 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 // Modelo de Tarefa
-
 model Task {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id Int @id @default(autoincrement())
   titulo    String
   descricao String?
   concluida Boolean  @default(false)
