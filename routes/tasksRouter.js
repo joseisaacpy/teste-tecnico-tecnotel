@@ -41,6 +41,24 @@ tasksRouter.get("/", async (req, res) => {
 });
 
 // Pega tarefa por id ou nome
+tasksRouter.get("/:id", async (req, res) => {
+  try {
+    const task = await prisma.task.findUnique({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!task) {
+      return res.status(404).json({ msg: "Tarefa não encontrada." });
+    }
+    res.json({
+      message: "Tarefa encontrada.",
+      task,
+    });
+  } catch (error) {
+    res.status(500).send("Erro ao buscar tarefa.");
+  }
+});
 // Atualiza uma tarefa
 // Deleta uma tarefa
 
