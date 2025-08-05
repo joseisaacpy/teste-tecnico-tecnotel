@@ -3,17 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
-    "start-client": "cd client && npm install && npm run dev",
-    "start-server": "cd server && npm install && npm run dev"
+    "install": "npm run setup",
+    "setup": "npm install --prefix server && npm install --prefix client && npm run prisma:generate && npm run prisma:push",
+    "prisma:generate": "npx --prefix server prisma generate",
+    "prisma:push": "npx --prefix server prisma db push",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  },
-  "dependencies": {
-    "@prisma/client": "^6.13.0",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "prisma": "^6.13.0"
   }
 }

@@ -118,30 +118,21 @@ cd teste-tecnico-tecnotel
 
 ```
 
-Instale as dependências da raiz (que também prepara os scripts do front e backend):
+Instale as dependências da raiz (isso também instala o frontend, backend e configura o banco SQLite automaticamente):
 
 ```bash
 
 npm install
 ```
 
-Configure o Prisma (gerar cliente e criar o banco SQLite):
-
-```bash
-npx prisma generate
-npx prisma db push
-```
-
-🔹 Um arquivo de banco de dados SQLite (`dev.db`) será criado automaticamente na pasta `prisma/`.
-
 ## Para rodar o projeto
-
-Você pode rodar backend e frontend juntos no modo de desenvolvimento com:
 
 ```bash
 
 npm run dev
 ```
+
+🔹 Um arquivo de banco de dados SQLite (`dev.db`) será criado automaticamente na pasta `prisma/`.
 
 ## 📡 Endpoints da API
 
