@@ -1,6 +1,6 @@
 # 🧪 Teste Técnico - API de Tarefas
 
-API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas (To-Do List), utilizando **Node.js**, **Express**, **Prisma** e **MongoDB**.
+API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas (To-Do List), utilizando **Node.js**, **Express**, **Prisma** e **SQLite**.
 
 ---
 
@@ -9,7 +9,7 @@ API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas 
 - Node.js
 - Express
 - Prisma ORM
-- MongoDB (via Atlas)
+- SQLite
 - Dotenv
 - Nodemon (para ambiente de desenvolvimento)
 
@@ -59,22 +59,14 @@ cd teste-tecnico-tecnotel
 npm install
 ```
 
-## Configure o .env:
-
-Crie um arquivo .env na raiz com a seguinte variável:
-
-```
-DATABASE_URL="sua-url-do-mongodb"
-```
-
-⚠️ Use o MongoDB Atlas ou instância local. Certifique-se de que o banco "tarefas" exista ou será criado automaticamente.
-
 ## Configure o Prisma:
 
 ```
 npx prisma generate
 npx prisma db push
 ```
+
+🔹 Um arquivo de banco de dados SQLite (`dev.db`) será criado automaticamente na pasta `prisma/`.
 
 ## Inicie o servidor:
 
@@ -95,7 +87,7 @@ npm run dev
 ## 👤 Autor
 
 - José Isaac Nascimento
-- [LinkedIn]()
+- [LinkedIn](https://www.linkedin.com/in/jos%C3%A9-isaac-nascimento/)
 
 ## 📝 Licença
 

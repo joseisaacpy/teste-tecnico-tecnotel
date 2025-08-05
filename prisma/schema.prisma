@@ -13,7 +13,7 @@ datasource db {
 model Task {
   id Int @id @default(autoincrement())
   titulo    String
-  descricao String?
+  descricao String? // opcional
   concluida Boolean  @default(false)
   criada_em DateTime @default(now())
 
