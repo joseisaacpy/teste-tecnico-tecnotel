@@ -31,7 +31,8 @@ tasksRouter.get("/", async (req, res) => {
 
     // Valida se tem alguma tarefa
     if (tasks.length === 0) {
-      return res.status(404).json({ msg: "Nenhuma tarefa encontrada." });
+      // Se não tiver, retorna um array vazio e um status 404
+      return res.status(404).json(tasks);
     }
     // Envia as tarefas
     res.json(tasks);
