@@ -2,7 +2,7 @@ import { useState } from "react";
 // Importando o toastify
 import { toast, ToastContainer } from "react-toastify";
 
-const TaksForm = () => {
+const TaksForm = ({ onTaskAdded }) => {
   // Estados para o formulário
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
@@ -33,6 +33,8 @@ const TaksForm = () => {
       // Limpa os campos do formulário
       setTitulo("");
       setDescricao("");
+      // Chamar callback para avisar que adicionou uma tarefa
+      if (onTaskAdded) onTaskAdded();
     } catch (error) {
       // Exibe uma mensagem de erro
       toast.error("Erro ao adicionar tarefa.");

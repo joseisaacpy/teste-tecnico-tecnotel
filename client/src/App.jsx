@@ -1,5 +1,4 @@
-import TaskForm from "./Components/TaskForm";
-import TaskList from "./Components/TaskList";
+import TaskPage from "./Components/TaskPage";
 import { useEffect } from "react";
 function App() {
   // Usa o useEffect para mudar nome do title
@@ -16,8 +15,7 @@ function App() {
         </header>
         {/* Main */}
         <main className="flex-1 p-4">
-          <TaskForm />
-          <TaskList />
+          <TaskPage />
         </main>
         {/* Footer */}
         <footer className="bg-slate-900 p-2 w-full">
