@@ -59,8 +59,30 @@ tasksRouter.get("/:id", async (req, res) => {
     res.status(500).send("Erro ao buscar tarefa.");
   }
 });
+
 // Atualiza uma tarefa
-// Deleta uma tarefa
+
+// Deleta uma tarefa pelo id
+tasksRouter.delete("/:id", async (req, res) => {
+  try {
+    const task = await prisma.task.delete({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!task) {
+      return res.status(404).json({ msg: "Tarefa não encontrada." });
+    }
+
+    res.json({
+      message: "Tarefa deletada com sucesso.",
+      task,
+    });
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao deletar tarefa." });
+  }
+});
 
 // Export
 export default tasksRouter;
