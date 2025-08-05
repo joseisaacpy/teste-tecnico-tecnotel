@@ -28,6 +28,31 @@ const TaskList = () => {
       toast.error("Erro ao deletar tarefa.");
     }
   };
+  // Função para dar check na tarefa
+  const checkTarefa = async (id) => {
+    try {
+      const tarefaEncontrada = tarefas.find((tarefa) => {
+        return tarefa.id === id;
+      });
+      if (!tarefaEncontrada) return;
+      await fetch(`http://localhost:3000/tasks/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          concluida: !tarefaEncontrada.concluida,
+        }),
+      });
+      buscarTarefas();
+      toast.success("Tarefa editada com sucesso!", { autoClose: 500 });
+    } catch (error) {
+      console.error(error);
+      toast.error("Erro ao editar tarefa.");
+    }
+  };
+  // Função para editar tarefa no formulário
+  
   // Usa o useEffect para buscar as tarefas ao montar o componente
   useEffect(() => {
     buscarTarefas();
@@ -70,7 +95,10 @@ const TaskList = () => {
                     >
                       <FaTrash />
                     </button>
-                    <button className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all">
+                    <button
+                      className="cursor-pointer p-1 rounded-[5px] bg-slate-800 text-white transition-all"
+                      onClick={() => checkTarefa(tarefa.id)}
+                    >
                       <FaCheck />
                     </button>
                   </div>
