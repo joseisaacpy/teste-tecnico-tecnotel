@@ -146,17 +146,17 @@ No Windows (CMD):
 copy server\.env.example server\.env
 ```
 
-### 3. Instale as dependências (isso configura tudo)
+### 3. Instale as dependências
 
 ```bash
-npm postinstall
+npm i
 ```
 
 ### 4. Gere o banco com Prisma
 
 ```bash
 cd server
-npx prisma generate
+npx prisma db push
 ```
 
 ### 4. Rode o projeto (client + server)
