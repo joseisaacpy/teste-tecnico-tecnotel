@@ -109,7 +109,7 @@ Este projeto é dividido em duas partes:
 
 ## 📦 Instalação
 
-Clone o repositório:
+### 1. Clone o repositório:
 
 ```bash
 git clone https://github.com/joseisaacpy/teste-tecnico-tecnotel
@@ -118,17 +118,30 @@ cd teste-tecnico-tecnotel
 
 ```
 
-Instale as dependências da raiz (isso também instala o frontend, backend e configura o banco SQLite automaticamente):
+### 2. Copie as variáveis de ambiente
+
+No Linux/Mac:
+
+```bash
+cp server/.env.example server/.env
+```
+
+No Windows (CMD):
 
 ```bash
 
+copy server\.env.example server\.env
+```
+
+### 3. Instale as dependências (isso configura tudo)
+
+```bash
 npm install
 ```
 
-## Para rodar o projeto
+### 4. Rode o projeto (client + server)
 
 ```bash
-
 npm run dev
 ```
 
