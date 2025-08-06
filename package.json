@@ -5,7 +5,8 @@
   "scripts": {
     "postinstall": "npm run setup",
     "setup": "npm install --prefix server && npm install --prefix client && npm run prisma:generate && npm run prisma:push",
-    "prisma:generate": "npx --prefix server prisma generate",
+    "prisma:generate": "npx prisma generate --schema=server/prisma/schema.prisma"
+    ,
     "prisma:push": "npx --prefix server prisma db push",
     "dev": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\""
   },

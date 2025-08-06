@@ -109,6 +109,19 @@ Este projeto é dividido em duas partes:
 
 ## 📦 Instalação
 
+### ⚠️ Requisitos
+
+Antes de começar, certifique-se de que você tem o **Node.js instalado (versão 18 ou superior)**.
+
+🔗 Baixe aqui: [https://nodejs.org/en](https://nodejs.org/en)
+
+Para verificar se está instalado:
+
+```bash
+node -v
+npm -v
+```
+
 ### 1. Clone o repositório:
 
 ```bash
@@ -136,12 +149,20 @@ copy server\.env.example server\.env
 ### 3. Instale as dependências (isso configura tudo)
 
 ```bash
-npm install
+npm postinstall
+```
+
+### 4. Gere o banco com Prisma
+
+```bash
+cd server
+npx prisma generate
 ```
 
 ### 4. Rode o projeto (client + server)
 
 ```bash
+cd ..
 npm run dev
 ```
 
