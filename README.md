@@ -3,12 +3,15 @@
 API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas (To-Do List), utilizando **Node.js**, **Express**, **Prisma** e **SQLite**.
 
 # Ilustrações
+
 ## Desktop:
+
 <p align="center">
   <img src="./images/projeto-v-desktop.png" width="600" alt="To-Do na versão desktop" />
 </p>
 
 ## Mobile:
+
 <p align="center">
   <img src="./images/projeto-v-mobile.png" width="300" alt="To-Do na versão mobile" />
 </p>
@@ -50,7 +53,6 @@ Este projeto é dividido em duas partes:
 ├─ README.md
 ├─ client
 │  ├─ .gitignore
-│  ├─ README.md
 │  ├─ eslint.config.js
 │  ├─ index.html
 │  ├─ package-lock.json
@@ -73,9 +75,13 @@ Este projeto é dividido em duas partes:
 │  │  ├─ index.css
 │  │  └─ main.jsx
 │  └─ vite.config.js
+├─ images
+│  ├─ projeto-v-desktop.png
+│  └─ projeto-v-mobile.png
 ├─ package-lock.json
 ├─ package.json
 └─ server
+   ├─ .env.example
    ├─ generated
    │  └─ prisma
    │     ├─ client.d.ts
@@ -107,7 +113,6 @@ Este projeto é dividido em duas partes:
    ├─ package-lock.json
    ├─ package.json
    ├─ prisma
-   │  ├─ dev.db
    │  ├─ migrations
    │  │  ├─ 20250805094928_init
    │  │  │  └─ migration.sql
@@ -115,8 +120,10 @@ Este projeto é dividido em duas partes:
    │  └─ schema.prisma
    ├─ routes
    │  └─ tasksRouter.js
+   ├─ seed.js
    └─ server.js
-```
+
+````
 
 ## 📦 Instalação
 
@@ -131,7 +138,7 @@ Para verificar se está instalado:
 ```bash
 node -v
 npm -v
-```
+````
 
 ### 1. Clone o repositório:
 
@@ -169,13 +176,14 @@ npm i
 cd server
 npx prisma db push
 ```
+
 ### 5. Rode o seed para popular dados iniciais (opcional)
 
 ```bash
 node seed.js
 ```
 
-### 4. Rode o projeto (client + server)
+### 6. Rode o projeto (client + server)
 
 ```bash
 cd ..
