@@ -2,6 +2,17 @@
 
 API RESTful desenvolvida como parte de um teste técnico para gerenciar tarefas (To-Do List), utilizando **Node.js**, **Express**, **Prisma** e **SQLite**.
 
+# Ilustrações
+## Desktop:
+<p align="center">
+  <img src="./images/projeto-v-desktop.png" width="600" alt="To-Do na versão desktop" />
+</p>
+
+## Mobile:
+<p align="center">
+  <img src="./images/projeto-v-mobile.png" width="300" alt="To-Do na versão mobile" />
+</p>
+
 ---
 
 ## 🚀 Tecnologias utilizadas
