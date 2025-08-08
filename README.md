@@ -169,6 +169,11 @@ npm i
 cd server
 npx prisma db push
 ```
+### 5. Rode o seed para popular dados iniciais (opcional)
+
+```bash
+node seed.js
+```
 
 ### 4. Rode o projeto (client + server)
 
